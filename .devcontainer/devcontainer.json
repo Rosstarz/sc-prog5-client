@@ -1,0 +1,59 @@
+// For format details, see https://aka.ms/devcontainer.json. For config options, see the
+// README at: https://github.com/devcontainers/templates/tree/main/src/java
+{
+	"name": "prog5-client",
+    "dockerComposeFile": [
+        // "../docker-compose.yml",
+        "./docker-compose.dev.yml"
+    ],
+	"service": "prog5-client",
+    "shutdownAction": "stopCompose",
+	"workspaceFolder": "/workspace",
+	// "initializeCommand": "echo Initialize....",
+	// "overrideCommand": true
+
+	// https://containers.dev/features
+	"features": {
+		"ghcr.io/devcontainers/features/docker-outside-of-docker:1": {}
+	},
+
+	// "mounts": [
+	// 	"source=${localEnv:HOME}${localEnv:USERPROFILE}/.ssh,target=/home/vscode/.ssh,readonly,type=bind",
+	// 	"source=vscode-extensions,target=/root/.vscode-server-insiders/extensions,type=volume"
+	// ],
+
+	// Use 'forwardPorts' to make a list of ports inside the container available locally.
+	"forwardPorts": [ 
+		"8282:8080"
+	],
+
+	// Configure tool-specific properties.
+	"customizations": {
+		"vscode": {
+			"extensions": [
+				"VisualStudioExptTeam.vscodeintellicode",
+				"oderwat.indent-rainbow",
+				"yzhang.markdown-all-in-one",
+				"esbenp.prettier-vscode",
+				"chrmarti.regex",
+				"Larrito.status-bar-permission-bits",
+				"Gruntfuggly.todo-tree",
+				"redhat.vscode-xml",
+				"redhat.vscode-yaml",
+				"matheusq94.TFS",
+				"GitHub.copilot",
+				"GitHub.copilot-chat",
+				"GitLab.gitlab-workflow",
+				"eamodio.gitlens"
+			]
+		}
+	},
+
+	// Uncomment to connect as root instead. More info: https://aka.ms/dev-containers-non-root.
+	// "remoteUser": "root"
+
+	// Use 'postCreateCommand' to run commands after the container is created.
+	"postCreateCommand": "bash /workspace/.devcontainer/postCreateCommand.sh",
+
+	"postAttachCommand": "echo 'Post Attach Command'"
+}

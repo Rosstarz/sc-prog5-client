@@ -1,0 +1,5 @@
+@mixin transform($property) {
+  transform: $property;
+  margin-bottom: 100px;
+  color: blue;
+}

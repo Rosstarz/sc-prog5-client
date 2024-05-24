@@ -1,0 +1,51 @@
+@use "variables" as *;
+@use "mixins" as mx;
+
+@import "~bootstrap/scss/bootstrap";
+
+body {
+    background-color: $backgroundColor;
+
+    .responsive-image {
+        width: 100%;
+        max-width: 400px;
+    }
+
+    .description-textarea {
+        height: 120px;
+    }
+
+    .form-signin {
+        max-width: 330px;
+        padding: 1rem;
+
+        .form-floating:focus-within {
+            z-index: 2;
+        }
+
+        input[type="text"] {
+            margin-bottom: -1px;
+            border-bottom-right-radius: 0;
+            border-bottom-left-radius: 0;
+        }
+
+        input[type="password"] {
+            margin-bottom: 10px;
+            border-top-left-radius: 0;
+            border-top-right-radius: 0;
+        }
+    }
+
+    .btn-nowrap {
+        white-space: nowrap;
+    }
+
+    .select-language {
+        max-width: 115px;
+    }
+
+    .store-item {
+        display: flex;
+        justify-content: space-between;
+    }
+}
