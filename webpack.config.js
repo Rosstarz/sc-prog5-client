@@ -35,7 +35,19 @@ const config = {
         static: { directory: path.resolve('dist') },
         hot: false, // optional, but don't enable hot _and_ liveReload together
         liveReload: true,
-        open: true
+        open: true,
+        watchFiles: ['src/**/*'],
+        // compress: true,
+        port: 9000,
+        proxy: [
+            {
+                context: ['/api'],
+                target: 'http://prog5:8080',
+                secure: false,
+                changeOrigin: true,
+                // pathRewrite: { '^/api': '' },
+            },
+        ],
     },
     output: {
         // Clean 'dist' folder before generating new files

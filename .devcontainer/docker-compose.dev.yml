@@ -13,7 +13,7 @@ services:
     # restart: always
     volumes:
       - ..:/workspace:cached
-      - /home/ross/.ssh:/home/vscode/.ssh
+      # - /home/ross/.ssh:/home/vscode/.ssh
       - /home/ross/.ssh:/home/node/.ssh
     # environment:
     #   - SPRING_PROFILES_ACTIVE=dev
@@ -24,4 +24,4 @@ services:
     expose:
       - "9003"
     ports:
-      - "9003:8080"
+      - "9003:9000"

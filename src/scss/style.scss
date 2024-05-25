@@ -6,6 +6,10 @@
 body {
     background-color: $backgroundColor;
 
+    #section-new-developer {
+        display: none;
+    }
+
     .responsive-image {
         width: 100%;
         max-width: 400px;
@@ -47,5 +51,9 @@ body {
     .store-item {
         display: flex;
         justify-content: space-between;
+    }
+
+    .input-group-append {
+        cursor: pointer;
     }
 }
