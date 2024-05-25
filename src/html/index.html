@@ -4,11 +4,10 @@
     <meta charset="UTF-8">
     <title>Gamis Client</title>
 </head>
-<body class="container">
-
-    <nav class="navbar navbar-expand-sm bg-body-tertiary">
+<body>
+    <nav class="navbar navbar-expand-md bg-body-tertiary">
         <div class="container-fluid">
-            <a class="navbar-brand" href="#">Gamis</a>
+            <a class="navbar-brand" href="/">Gamis</a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
@@ -25,49 +24,55 @@
         </div>
     </nav>
 
-    <section id="section-search-developers">
-        <h1>Search Developers</h1>
+    <main class="container">
+        <!-- Search developer section  -->
+        <section id="section-search-developers">
+            <h1>Search Developers</h1>
 
-        <form id="search-form">
-            <label for="search-term" class="form-label">Search term</label>
-            <input type="text" id="search-term" class="form-control">
+            <form id="search-form">
+                <label for="search-term" class="form-label">Search by name</label>
+                <input type="text" id="search-term" class="form-control">
 
-            <button type="submit" id="search-button" class="btn btn-primary">Search</button>
-        </form>
+                <button type="submit" id="search-button" class="btn btn-primary">Search</button>
+            </form>
 
-        <table class="table">
-            <thead>
-                <tr>
-                    <th>Name</th>
-                    <th>Country</th>
-                </tr>
-            </thead>
-            <tbody id="search-results">
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th>Name</th>
+                        <th>Country</th>
+                        <th>Founded</th>
+                    </tr>
+                </thead>
+                <tbody id="search-results">
 
-            </tbody>
-        </table>
-    </section>
+                </tbody>
+            </table>
+        </section>
 
-    <section id="section-new-developer">
-        <h1>Add new Developer</h1>
+        <!-- Add new developer section  -->
+        <section id="section-new-developer">
+            <h1>Add new Developer</h1>
 
-        <form id="new-developer-form">
-            <div class="mb-3">
-                <label for="new-dev-name" class="form-label">Name</label>
-                <input type="text" class="form-control" id="new-dev-name">
-            </div>
-            <div class="mb-3">
-                <label for="select-country" class="form-label">Country</label>
-                <!-- <input class="form-control" id="country"> -->
-                <select class="form-select" aria-label="Country select" id="select-country" required></select>
-            </div>
-            <div class="mb-3">
-                <label for="dev-datepicker" class="form-label">Founded</label>
-                <input type="date" class="form-control" id="dev-datepicker">
-            </div>
-            <button type="submit" class="btn btn-primary" id="new-developer-button">Save</button>
-        </form>
-    </section>
+            <form id="new-developer-form">
+                <div class="mb-3">
+                    <label for="new-dev-name" class="form-label">Name</label>
+                    <input type="text" class="form-control" id="new-dev-name">
+                </div>
+                <div class="mb-3">
+                    <label for="select-country" class="form-label">Country</label>
+                    <!-- <input class="form-control" id="country"> -->
+                    <select class="form-select" aria-label="Country select" id="select-country" required></select>
+                </div>
+                <div class="mb-3">
+                    <label for="dev-datepicker" class="form-label">Founded</label>
+                    <input type="date" class="form-control" id="dev-datepicker">
+                </div>
+                <button type="submit" class="btn btn-primary" id="new-developer-button">Save</button>
+            </form>
+        </section>
+    </main>
+
     <div class="toast-container p-3 top-0 start-50 translate-middle-x">
         <div id="liveToast" class="toast align-items-center border-0" role="alert" aria-live="assertive" aria-atomic="true">
             <div class="d-flex">
