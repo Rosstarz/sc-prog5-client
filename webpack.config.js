@@ -44,7 +44,7 @@ const config = {
                 context: ['/api'],
                 target: 'http://prog5:8080',
                 secure: false,
-                changeOrigin: true,
+                changeOrigin: false,
                 // pathRewrite: { '^/api': '' },
             },
         ],

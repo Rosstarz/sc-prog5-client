@@ -1,26 +1,21 @@
-const sectionIds = ['section-search-issues', 'section-new-developer']
+const sectionIds = ['section-search-developers', 'section-new-developer']
 
-const linkSearchIssues = document.getElementById('link-search-issues')
-const linkNewIssue = document.getElementById('link-new-issue')
+const linkSearchDevelopers = document.getElementById('link-search-developers')
+const linkNewDeveloper = document.getElementById('link-new-developer')
 
-/**
- * Call this function with, i.e., the value "section-search-issues".
- * @param {string} sectionId
- */
+linkSearchDevelopers.addEventListener('click', (event) =>
+    event.preventDefault() || enableTab(sectionIds[0]))
+linkNewDeveloper.addEventListener('click', (event) =>
+    event.preventDefault() || enableTab(sectionIds[1]))
+
 function enableTab(sectionId) {
     const allSections = document.querySelectorAll('body > section')
     for (const section of allSections) {
         if (section.id === sectionId) {
             section.style.display = 'block'
-            // TODO active class ? enable or disable
         } else {
             section.style.display = 'none'
-            // TODO active class ? enable or disable
         }
     }
 }
 
-linkSearchIssues.addEventListener('click', (event) =>
-    event.preventDefault() || enableTab(sectionIds[0]))
-linkNewIssue.addEventListener('click', (event) =>
-    event.preventDefault() || enableTab(sectionIds[1]))

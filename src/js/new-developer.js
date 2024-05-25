@@ -36,9 +36,11 @@ const liveToastMessage = document.getElementById('liveToastMessage')
  */
 const toastBootstrap = Toast.getOrCreateInstance(toastLive)
 
+const datePicker = flatpickr(dateInput, {})
+
 // Create datepicker
 function createDatePicker(){
-    flatpickr(dateInput, {}).setDate(new Date());
+    datePicker.setDate(new Date());
 }
 
 async function addNewGame() {
@@ -58,13 +60,14 @@ async function addNewGame() {
     })
     if (response.status === 201) {
         toastLive.classList.remove('text-bg-danger')
-        toastLive.classList.add('text-bg-primary')
+        toastLive.classList.add('text-bg-success')
         liveToastMessage.innerText = 'Developer added successfully'
         toastBootstrap.show()
         console.log(response)
         form.reset()
+        datePicker.setDate(new Date());
     } else {
-        toastLive.classList.remove('text-bg-primary')
+        toastLive.classList.remove('text-bg-success')
         toastLive.classList.add('text-bg-danger')
         if (response.status === 400) {
             const data = await response.json();
