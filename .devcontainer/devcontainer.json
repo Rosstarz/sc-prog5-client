@@ -44,7 +44,8 @@
 				"GitHub.copilot",
 				"GitHub.copilot-chat",
 				"GitLab.gitlab-workflow",
-				"eamodio.gitlens"
+				"eamodio.gitlens",
+				"dbaeumer.vscode-eslint"
 			]
 		}
 	},

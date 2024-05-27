@@ -3,7 +3,7 @@
 whoami
 
 cd /workspace
-npm init -y
+# npm init -y
 
 # sudo chown -R vscode:vscode .
 # sudo chown -R vscode:vscode ~/.ssh
