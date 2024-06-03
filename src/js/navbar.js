@@ -9,7 +9,8 @@ linkNewDeveloper.addEventListener('click', (event) =>
     event.preventDefault() || enableTab(sectionIds[1]))
 
 function enableTab(sectionId) {
-    const allSections = document.querySelectorAll('body > section')
+    console.log('enableTab', sectionId)
+    const allSections = document.querySelectorAll('body > main > section')
     for (const section of allSections) {
         if (section.id === sectionId) {
             section.style.display = 'block'
