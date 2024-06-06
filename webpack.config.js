@@ -1,6 +1,11 @@
 import HtmlWebpackPlugin from 'html-webpack-plugin'
 import MiniCssExtractPlugin from 'mini-css-extract-plugin'
+import webpack from 'webpack'
+import dotenv from 'dotenv'
 import path from 'path'
+
+// this will update the process.env with environment variables in .env file
+dotenv.config();
 
 const config = {
     devtool: 'source-map',
@@ -9,7 +14,10 @@ const config = {
         new HtmlWebpackPlugin({
             template: path.resolve('src/html/index.html'),
         }),
-        new MiniCssExtractPlugin()
+        new MiniCssExtractPlugin(),
+        new webpack.DefinePlugin({
+            'process.env': JSON.stringify(process.env)
+        })
     ],
     module: {
         rules: [
@@ -42,12 +50,21 @@ const config = {
         proxy: [
             {
                 context: ['/api'],
-                target: 'http://prog5:8080',
+                target: process.env.PROG5_BACKEND_URL,
                 secure: false,
-                changeOrigin: false,
+                changeOrigin: true,
                 // pathRewrite: { '^/api': '' },
             },
         ],
+        // proxy: [
+        //     {
+        //         context: ['/api'],
+        //         target: 'http://prog5:8080',
+        //         secure: false,
+        //         changeOrigin: false,
+        //         // pathRewrite: { '^/api': '' },
+        //     },
+        // ],
     },
     output: {
         // Clean 'dist' folder before generating new files
