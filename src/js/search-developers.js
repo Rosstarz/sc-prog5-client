@@ -30,9 +30,10 @@ const liveToastMessage = document.getElementById('liveToastMessage')
  */
 const toastBootstrap = Toast.getOrCreateInstance(toastLive)
 
-console.log(process.env.PROG5_BACKEND_URL)
 
 async function searchDevelopers() {
+    // console.log("VAR: " + process.env.PROG5_BACKEND_URL)
+    console.log("BASE_URL: " + BASE_URL)
     const searchTerm = searchInput.value
     const response = await fetch(`${BASE_URL}/api/developers?search=${searchTerm}`, {
         method: 'GET',

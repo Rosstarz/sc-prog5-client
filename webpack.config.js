@@ -1,11 +1,11 @@
 import HtmlWebpackPlugin from 'html-webpack-plugin'
 import MiniCssExtractPlugin from 'mini-css-extract-plugin'
 import webpack from 'webpack'
-import dotenv from 'dotenv'
+// import dotenv from 'dotenv'
 import path from 'path'
 
 // this will update the process.env with environment variables in .env file
-dotenv.config();
+// dotenv.config();
 
 const config = {
     devtool: 'source-map',
@@ -47,24 +47,24 @@ const config = {
         watchFiles: ['src/**/*'],
         // compress: true,
         port: 9000,
-        proxy: [
-            {
-                context: ['/api'],
-                target: process.env.PROG5_BACKEND_URL,
-                secure: false,
-                changeOrigin: true,
-                // pathRewrite: { '^/api': '' },
-            },
-        ],
-        // proxy: [
-        //     {
-        //         context: ['/api'],
-        //         target: 'http://prog5:8080',
-        //         secure: false,
-        //         changeOrigin: false,
-        //         // pathRewrite: { '^/api': '' },
-        //     },
-        // ],
+    //     proxy: [
+    //         {
+    //             context: ['/api'],
+    //             target: process.env.PROG5_BACKEND_URL,
+    //             secure: false,
+    //             changeOrigin: true,
+    //             // pathRewrite: { '^/api': '' },
+    //         },
+    //     ],
+    //     // proxy: [
+    //     //     {
+    //     //         context: ['/api'],
+    //     //         target: 'http://prog5:8080',
+    //     //         secure: false,
+    //     //         changeOrigin: false,
+    //     //         // pathRewrite: { '^/api': '' },
+    //     //     },
+    //     // ],
     },
     output: {
         // Clean 'dist' folder before generating new files

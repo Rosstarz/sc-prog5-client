@@ -83,7 +83,7 @@ async function addNewGame() {
 
 // Get Countries for select list
 async function setCountryList(){
-    await fetch('/api/developers/countries', {
+    await fetch(`${BASE_URL}/api/developers/countries`, {
         method: 'GET',
         headers: {
             'Content-Type': 'application/json'
