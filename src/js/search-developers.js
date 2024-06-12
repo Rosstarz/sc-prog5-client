@@ -30,6 +30,7 @@ const liveToastMessage = document.getElementById('liveToastMessage')
  */
 const toastBootstrap = Toast.getOrCreateInstance(toastLive)
 
+console.log(process.env.PROG5_BACKEND_URL)
 
 async function searchDevelopers() {
     const searchTerm = searchInput.value

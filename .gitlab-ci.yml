@@ -1,0 +1,45 @@
+# variables:
+#   NODE_IMAGE: node:18.20.3-alpine
+
+# cache:
+#   paths:
+#     - ${CI_PROJECT_DIR}/node_modules/
+#     - ${CI_PROJECT_DIR}/dist/
+
+stages:
+  # - build
+  - dockerize
+  # - cleanup
+
+# build:
+#   image: $NODE_IMAGE
+#   stage: build
+#   script:
+#     - echo "Building the application..."
+#     - npm install
+#     - npm run build
+#     - ls -al
+
+dockerize:
+  image: docker:latest
+  stage: dockerize
+  services:
+    - name: docker:dind
+  script:
+    - ls -al
+    - echo "$CI_REGISTRY_PASSWORD" | docker login -u $CI_REGISTRY_USER --password-stdin $CI_REGISTRY
+    - echo "Building docker image.."
+    - docker build -t $CI_REGISTRY_IMAGE:$CI_COMMIT_SHORT_SHA -t $CI_REGISTRY_IMAGE:latest .
+    - docker push $CI_REGISTRY_IMAGE:$CI_COMMIT_SHORT_SHA
+    - docker push $CI_REGISTRY_IMAGE:latest
+  # dependencies:
+  #   - build
+
+# cleanup-job:
+#   image: $NODE_IMAGE
+#   stage: cleanup
+#   script:
+#     - echo "Cleaning up.."
+#     - npm run clean
+#     - rm -rf node_modules
+#   when: always
