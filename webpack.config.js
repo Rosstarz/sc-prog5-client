@@ -47,15 +47,15 @@ const config = {
         watchFiles: ['src/**/*'],
         // compress: true,
         port: 9000,
-    //     proxy: [
-    //         {
-    //             context: ['/api'],
-    //             target: process.env.PROG5_BACKEND_URL,
-    //             secure: false,
-    //             changeOrigin: true,
-    //             // pathRewrite: { '^/api': '' },
-    //         },
-    //     ],
+        proxy: [
+            {
+                context: ['/api'],
+                target: process.env.PROG5_BACKEND_URL,
+                secure: false,
+                changeOrigin: true,
+                // pathRewrite: { '^/api': '' },
+            },
+        ],
     //     // proxy: [
     //     //     {
     //     //         context: ['/api'],
