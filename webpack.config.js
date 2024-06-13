@@ -39,28 +39,28 @@ const config = {
             },
         ]
     },
-    devServer: {
-        static: { directory: path.resolve('dist') },
-        hot: false, // optional, but don't enable hot _and_ liveReload together
-        liveReload: true,
-        open: true,
-        watchFiles: ['src/**/*'],
-        // compress: true,
-        port: 9000,
-        headers: {
-            "Access-Control-Allow-Origin": "*",
-            "Access-Control-Allow-Methods": "GET, POST, PUT, DELETE, PATCH, OPTIONS",
-            "Access-Control-Allow-Headers": "X-Requested-With, content-type, Authorization"
-        },
-        proxy: [
-            {
-                context: ['/api'],
-                target: process.env.PROG5_BACKEND_URL,
-                secure: true,
-                changeOrigin: true,
-                // pathRewrite: { '^/api': '' },
-            },
-        ],
+    // devServer: {
+    //     static: { directory: path.resolve('dist') },
+    //     hot: false, // optional, but don't enable hot _and_ liveReload together
+    //     liveReload: true,
+    //     open: true,
+    //     watchFiles: ['src/**/*'],
+    //     // compress: true,
+    //     port: 9000,
+    //     headers: {
+    //         "Access-Control-Allow-Origin": "*",
+    //         "Access-Control-Allow-Methods": "GET, POST, PUT, DELETE, PATCH, OPTIONS",
+    //         "Access-Control-Allow-Headers": "X-Requested-With, content-type, Authorization"
+    //     },
+    //     proxy: [
+    //         {
+    //             context: ['/api'],
+    //             target: process.env.PROG5_BACKEND_URL,
+    //             secure: true,
+    //             changeOrigin: true,
+    //             // pathRewrite: { '^/api': '' },
+    //         },
+    //     ],
     //     // proxy: [
     //     //     {
     //     //         context: ['/api'],
@@ -70,7 +70,7 @@ const config = {
     //     //         // pathRewrite: { '^/api': '' },
     //     //     },
     //     // ],
-    },
+    // },
     output: {
         // Clean 'dist' folder before generating new files
         clean: true,
