@@ -9,7 +9,7 @@ import path from 'path'
 
 const config = {
     devtool: 'source-map',
-    mode: 'development',
+    mode: 'production',
     plugins: [
         new HtmlWebpackPlugin({
             template: path.resolve('src/html/index.html'),
@@ -47,6 +47,11 @@ const config = {
         watchFiles: ['src/**/*'],
         // compress: true,
         port: 9000,
+        headers: {
+            'Access-Control-Allow-Origin': '*',
+            'Access-Control-Allow-Headers': '*',
+            'Access-Control-Allow-Methods': '*',
+        },
         proxy: [
             {
                 context: ['/api'],

@@ -26,7 +26,8 @@
   "scripts": {
     "build": "webpack",
     "start": "webpack serve",
-    "clean": "rm -rf dist"
+    "clean": "rm -rf dist",
+    "prod": "webpack  --config ./webpack.config.js --mode production && node src/index.js"
   },
   "main": "webpack.config.js",
   "keywords": [],
