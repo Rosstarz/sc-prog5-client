@@ -52,7 +52,7 @@ const config = {
                 context: ['/api'],
                 target: process.env.PROG5_BACKEND_URL,
                 secure: false,
-                changeOrigin: false,
+                changeOrigin: true,
                 // pathRewrite: { '^/api': '' },
             },
         ],
